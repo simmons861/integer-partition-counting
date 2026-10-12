@@ -36,3 +36,10 @@ For very large n the memory of holding the full table dominates and asymptotical
 - `src/integer_partition_counting/__init__.py` exports `partition_count` and `partition_table`.
 - `src/integer_partition_counting/core.py` contains the recurrence.
 - `tests/test_core.py` runs under `python -m unittest discover -s tests` with `PYTHONPATH=src`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
