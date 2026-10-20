@@ -1,6 +1,6 @@
 [project]
 name = "integer-partition-counting"
-version = "0.1.0"
+version = "0.1.1"
 description = "Computes the number of integer partitions using the Euler pentagonal recurrence for moderate n."
 requires-python = ">=3.10"
 dependencies = []
